@@ -2,8 +2,12 @@
 #include "funcoes.cpp"
 using namespace std;
 
+/* =============== WARNING ===========
+Arquivo somente chamando a funcao para carregar os dados dos funcionarios
+*/
+
+//APRESENTAÇÃO
 void apresentacao(){
-    //APRESENTAÇÃO
     cout << "==========================================================" << endl;
     cout << "Disciplina: Linguagem de programação I\n"
              "Alunos: Washington Wagner\n"
@@ -14,6 +18,7 @@ void apresentacao(){
     cout << "==========================================================" << endl;
 }
 
+// SELECAO DO MENU
 int menu(){
     int selecao;
     cout << "Selecione oque deseja fazer:\n"
@@ -27,22 +32,25 @@ int menu(){
 }
 
 int main(){
+    carregarClasses();
+    /* ==REMOVER COMENTARIOS A CADA ATUALIZACAO ==
     int selecao;
     apresentacao();
     selecao = menu();            
 
     switch (selecao){
         case 1: 
-            /*cadastrarAnimal();
+            cadastrarAnimal();
         case 2:
             removerAnimal();
         case 3:
-            alterarCadastroAnimal();*/
+            alterarCadastroAnimal();
         case 4:
-            consultarDados();
-       /* case 5:
-            consultarAnimalTratador();*/
-    }
+            cout << "Flag" << endl;
+            //consultarDados();
+       case 5:
+            consultarAnimalTratador();
+    } */
 
     return 0;
 }

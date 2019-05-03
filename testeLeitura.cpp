@@ -3,8 +3,9 @@
 #include <string.h>
 #include <sstream>
 using namespace std;
-/* ESSE ARQUIVO FOI CRIADO PARA TESTE DE LEITURA DO ARQUIVO "dados.csv" PARA SE FUNCIONAR APLICAR NO CÓDIGO
-ORIGINAL, PORÉM NÃO ESTÁ FUNCIONANDO*/
+/* ARQUIVO DE ESQUELETO PARA FAZER A CONSTRUCAO DE CLASSES E SUB-CLASSES
+    SERÁ DESCONSIDERADO NO FINAL DO PROJETO*/
+
 class funcionario{
     public:
     string numero;
