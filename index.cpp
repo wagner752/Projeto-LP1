@@ -37,19 +37,18 @@ int main(){
     
     int selecao;
     selecao = menu();            
-
+       cout << selecao;
     switch (selecao){
         case 1: 
-           // cadastrarAnimal();
+           AlterarCadastro();
         case 2:
            // removerAnimal();
         case 3:
-        cout << "Flag" << endl;
            // alterarCadastroAnimal();
         case 4:
            consultarDados();
        case 5:
-       cout << "Flag" << endl;
+         cout << "\n";
            // consultarAnimalTratador();
     }
 

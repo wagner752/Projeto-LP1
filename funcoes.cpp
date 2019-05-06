@@ -17,6 +17,8 @@ IdadeFuncionario = INT
 FatorRh = CHAR
 */
 
+
+/* Alocar isso dinamicamente */
 int carregarClasses(){ //Principal função do programa "main"
    //Declaracao de variaveis
    ifstream arquivoDadosCSV;
@@ -89,43 +91,33 @@ int carregarClasses(){ //Principal função do programa "main"
          switch (i){
             case 1:
                A[j].setIdAnimal(linha);
-               cout << "Atributo01: " << A[j].getIdAnimal() << endl;
                break;
             case 2:
                A[j].setClasseAnimal(linha);
-               cout << "Atributo02: " << A[j].getClasseAnimal() << endl;
                break;
             case 3:
                A[j].setNomeAnimal(linha);
-               cout << "Atributo03: " << A[j].getNomeAnimal() << endl;
                break;
             case 4:
                A[j].setNomeCientifico(linha);
-               cout << "Atributo04: " << A[j].getNomeCientifico() << endl;
                break;
             case 5:
                A[j].setSexoAnimal(linha);
-               cout << "Atributo05: " << A[j].getSexoAnimal() << endl;
                break;
             case 6:
                A[j].setTamanhoAnimal(linha);
-               cout << "Atributo06: " << A[j].getTamanhoAnimal() << endl;
                break;
             case 7:
                A[j].setDietaAnimal(linha);
-               cout << "Atributo07: " << A[j].getDietaAnimal() << endl;
                break;
             case 8:
                A[j].setVeterinarioAssociado(linha);
-               cout << "Atributo08: " << A[j].getVeterinarioAssociado() << endl;
                break;
             case 9:
                A[j].setTratadorResponsavel(linha);
-               cout << "Atributo09: " << A[j].getTratadorResponsavel() << endl;
                break;
             case 10:
                A[j].setNomeBatismo(linha);
-               cout << "Atributo10: " << A[j].getNomeBatismo() << endl;
                break;
          } //switch
       } //for
@@ -136,6 +128,7 @@ int carregarClasses(){ //Principal função do programa "main"
 
 }
 
+//Imprimir dados dos funcionarios na tela
 int consultarDados(){
    ifstream arquivoDadosCSV;
    arquivoDadosCSV.open("dadosFuncionarios.csv");
@@ -143,16 +136,40 @@ int consultarDados(){
 
    //Teste se o arquivo foi aberto
    if (arquivoDadosCSV.is_open() == 0){
-      cout << "Erro na abertura do arquivo ""dados.csv"" o programa será encerrado" << endl;
+      cout << "Erro na abertura do arquivo ""dadosFuncionarios.csv"" o programa será encerrado" << endl;
       exit (EXIT_FAILURE);
    }
 
    cout << "\n===========================================================================" << endl;
-   cout << "Todos os dados cadastrados atualmente no sistema" << endl;
+   cout << "Todos os dados de funcionarios cadastrados atualmente no sistema" << endl;
    cout << "===========================================================================" << endl << endl;
    while(getline(arquivoDadosCSV, linha)){
       cout << linha << endl;
    }
 
    arquivoDadosCSV.close();
+}
+
+/* USAR SOBRECARGA DE FUNÇÕES */
+int consultarDados(int idAnimal){
+   ifstream arquivoDadosCSV;
+   arquivoDadosCSV.open("dadosAnimais.csv");
+
+   if (arquivoDadosCSV.is_open() == 0){
+      cout << "Erro na abertura do arquivo ""dadosFuncionarios.csv"" o programa será encerrado" << endl;
+      exit (EXIT_FAILURE);
+   }
+
+}
+
+void AlterarCadastro(){
+   cout << "\n===========================================================================" << endl;
+   cout << "Alterar cadastro de animais no sistema" << endl;
+   cout << "===========================================================================\n\n" << endl;
+   
+   int idAnimal; 
+
+   cout << "Digite o ID do animal(Exemplo: 12)" << endl;
+   cin >> idAnimal;
+   consultarDados(idAnimal);
 }
