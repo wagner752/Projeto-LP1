@@ -17,6 +17,7 @@ FatorRh = CHAR
 class Funcionario{
     protected: 
         string IdFuncionario;
+        string NomeFuncionario;
         string Funcao;
         string CPF;
         string IdadeFuncionario;
@@ -26,26 +27,27 @@ class Funcionario{
         string CodigoCrmv;
         
     public:
+        //Getters
+        string getIdFuncionario(); //int
+        string getNomeFuncionario();
+        string getFuncao();
+        string getCPF();
+        string getIdadeFuncionario(); //int
+        string getTipoSanguineo();
+        string getFatorRh(); //char
+        string getEspecialidade();
+        string getCodigoCrmv();
 
-    //Getters
-    string getIdFuncionario(); //int
-    string getFuncao();
-    string getCPF();
-    string getIdadeFuncionario(); //int
-    string getTipoSanguineo();
-    string getFatorRh(); //char
-    string getEspecialidade();
-    string getCodigoCrmv();
-
-    //Setters
-    void setIdFuncionario(string rID); //int
-    void setFuncao(string rFuncao);
-    void setCPF(string rCPF);
-    void setIdadeFuncionario(string rIdade); //int
-    void setTipoSanguineo(string rTipo);
-    void setFatorRh(string rFator); //char
-    void setEspecialidade(string rEspe);
-    void setCodigoCrmv(string rCode);
+        //Setters
+        void setIdFuncionario(string rID); //int
+        void setNomeFuncionario(string rNomeFuncionario);
+        void setFuncao(string rFuncao);
+        void setCPF(string rCPF);
+        void setIdadeFuncionario(string rIdade); //int
+        void setTipoSanguineo(string rTipo);
+        void setFatorRh(string rFator); //char
+        void setEspecialidade(string rEspe);
+        void setCodigoCrmv(string rCode);
        
 };
 
@@ -55,6 +57,9 @@ string Funcionario::getIdFuncionario(){
 }
 string Funcionario::getFuncao(){
     return Funcao;
+}
+string Funcionario::getNomeFuncionario(){
+    return NomeFuncionario;
 }
 string Funcionario::getCPF(){
     return CPF;
@@ -82,6 +87,9 @@ void Funcionario::setIdFuncionario(string rID){ //int
 void Funcionario::setFuncao(string rFuncao){
     Funcao = rFuncao;
 }
+void Funcionario::setNomeFuncionario(string rNomeFuncionario){
+    NomeFuncionario = rNomeFuncionario;
+}
 void Funcionario::setCPF(string rCPF){
     CPF =rCPF;
 }
@@ -99,4 +107,22 @@ void Funcionario::setEspecialidade(string rEspe){
 }
 void Funcionario::setCodigoCrmv(string rCode){
     CodigoCrmv = rCode;
+}
+
+//Sub-classe do nivel de segurança
+class Veterinario : public Funcionario {
+    private:
+    string NivelSeguranca;
+
+    public:
+    string getNivelSeguranca();
+    void setNivelSeguranca(string rNivel);
+};
+
+string Veterinario::getNivelSeguranca(){
+    return NivelSeguranca;
+}
+
+void Veterinario::setNivelSeguranca(string rNivel){
+    NivelSeguranca = rNivel;
 }

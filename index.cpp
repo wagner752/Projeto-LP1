@@ -33,24 +33,25 @@ int menu(){
 
 int main(){
     carregarClasses();
-    /* ==REMOVER COMENTARIOS A CADA ATUALIZACAO ==
-    int selecao;
     apresentacao();
+    
+    int selecao;
     selecao = menu();            
 
     switch (selecao){
         case 1: 
-            cadastrarAnimal();
+           // cadastrarAnimal();
         case 2:
-            removerAnimal();
+           // removerAnimal();
         case 3:
-            alterarCadastroAnimal();
+        cout << "Flag" << endl;
+           // alterarCadastroAnimal();
         case 4:
-            cout << "Flag" << endl;
-            //consultarDados();
+           consultarDados();
        case 5:
-            consultarAnimalTratador();
-    } */
+       cout << "Flag" << endl;
+           // consultarAnimalTratador();
+    }
 
     return 0;
 }
