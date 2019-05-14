@@ -3,8 +3,10 @@
 #include <stdlib.h>
 #include <fstream>  
 #include <sstream>
+#include <vector>
 #include "funcionarios.h"
 #include "animais.h"
+//#include "comparacao.cpp"
 using namespace std;
 
 /*
@@ -19,13 +21,13 @@ FatorRh = CHAR
 
 
 /* Alocar isso dinamicamente */
-int carregarClasses(){ //Principal função do programa "main"
+vector<Funcionario> carregarClasses(){ //Principal função do programa "main"
    //Declaracao de variaveis
    ifstream arquivoDadosCSV;
    string linha;
    arquivoDadosCSV.open("dadosFuncionarios.csv");
-   Funcionario F[99];
-   Veterinario V[99];
+   vector<Funcionario>  F(11);
+   //Veterinario V[10];
    int j, i; //Indices
 
    //Teste se o arquivo foi aberto
@@ -66,16 +68,21 @@ int carregarClasses(){ //Principal função do programa "main"
             case 9:
                F[j].setCodigoCrmv(linha);
                break;
-            case 10:
+            /*case 10:
                V[j].setNivelSeguranca(linha);
-               break;
+               break;*/
          }// /switch
       }// /for
-   
+      
       j = j;
+  ;
    }// /for
+
    arquivoDadosCSV.close(); //Fechamento do arquivo de dados de funcionarios
 
+   return F;
+
+   //Contrucao da classe de animais
    arquivoDadosCSV.open("dadosAnimais.csv");
    Animal A[99];
 
@@ -84,7 +91,8 @@ int carregarClasses(){ //Principal função do programa "main"
       cout << "Erro na abertura do arquivo ""dadosAnimais.csv"" o programa será encerrado" << endl;
       exit (EXIT_FAILURE);
    }
-
+   
+   //Preenchimento da classe
    for (j = 1; j <= 10; j++){
       for(i = 1; i <= 10; i++){
          (getline(arquivoDadosCSV, linha, ';'));
@@ -123,7 +131,6 @@ int carregarClasses(){ //Principal função do programa "main"
       } //for
       
       j = j;
-      cout << endl;
    } //for
 
 }
@@ -150,7 +157,7 @@ int consultarDados(){
    arquivoDadosCSV.close();
 }
 
-/* USAR SOBRECARGA DE FUNÇÕES */
+/* USAR SOBRECARGA DE FUNÇÕES 
 int consultarDados(int idAnimal){
    ifstream arquivoDadosCSV;
    arquivoDadosCSV.open("dadosAnimais.csv");
@@ -160,7 +167,27 @@ int consultarDados(int idAnimal){
       exit (EXIT_FAILURE);
    }
 
+}*/
+
+int consultarDados(int idAnimal){
+   ifstream arquivoDadosCSV;
+   arquivoDadosCSV.open("dadosAnimais.csv");
+   string linha;
+   int i, j;
+
+   if (arquivoDadosCSV.is_open() == 0){
+      cout << "Erro na abertura do arquivo ""dadosAnimais.csv"" o programa será encerrado" << endl;
+      exit (EXIT_FAILURE);
+   }
+
+  string IDs[10];
+  
+   auto funcs = carregarClasses();
+   for( auto &f : funcs){
+     //FUNÇÃO
+    }
 }
+
 
 void AlterarCadastro(){
    cout << "\n===========================================================================" << endl;
@@ -173,3 +200,12 @@ void AlterarCadastro(){
    cin >> idAnimal;
    consultarDados(idAnimal);
 }
+
+/*int Teste(){
+   auto funcs = carregarClasses();
+   for( auto &f : funcs){
+        cout << f.getNomeFuncionario() << endl;
+    }
+
+}*/
+

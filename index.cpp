@@ -32,7 +32,6 @@ int menu(){
 }
 
 int main(){
-    carregarClasses();
     apresentacao();
     
     int selecao;
@@ -46,7 +45,7 @@ int main(){
         case 3:
            // alterarCadastroAnimal();
         case 4:
-           consultarDados();
+           //consultarDados();
        case 5:
          cout << "\n";
            // consultarAnimalTratador();

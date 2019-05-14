@@ -23,45 +23,55 @@ class funcionario{
 int main(){
     ifstream arquivo; //Variavel para o arquivo
     string linha; //Linha para armazenar cada linha do arquivo
-    funcionario f;
-    arquivo.open("dados.csv"); 
+    funcionario f[10];
+    arquivo.open("dadosFuncionarios.csv"); 
 
     if (arquivo.is_open()){ //Se o arquivo for aberto
         for (int j = 0 ; j <= 9; j++){
-                for(int i = 1 ; i <= 10; i++){
+                for(int i = 0 ; i <= 9; i++){
                     (getline(arquivo,linha, ';'));
                     switch (i){
                         case 1:
-                        f.numero = linha;
+                        f[j].numero = linha;
                     
                         case 2:
-                        f.numero2 = linha;
+                        f[j].numero2 = linha;
 
                         case 3:
-                        f.numero3 = linha;
+                        f[j].numero3 = linha;
 
                         case 4:
-                        f.numero4 = linha;
+                        f[j].numero4 = linha;
 
                         case 5:
-                        f.numero5 = linha;
+                        f[j].numero5 = linha;
 
                         case 6:
-                        f.numero6 = linha;
+                        f[j].numero6 = linha;
 
                         case 7:
-                        f.numero7 = linha;
+                        f[j].numero7 = linha;
 
                         case 8:
-                        f.numero8 = linha;
+                        f[j].numero8 = linha;
 
                         case 9:
-                        f.numero9 = linha;
+                        f[j].numero9 = linha;
 
                         case 10:
-                        f.numero10 = linha;
+                        f[j].numero10 = linha;
                     }
                 }
+                  cout << f[j].numero << endl;
+    cout << f[j].numero2 << endl;
+    cout << f[j].numero3 << endl;
+    cout << f[j].numero4 << endl;
+    cout << f[j].numero5 << endl;
+    cout << f[j].numero6 << endl;
+    cout << f[j].numero7 << endl;
+    cout << f[j].numero8 << endl;
+    cout << f[j].numero9 << endl;
+    cout << f[j].numero10 << endl;
             j = j;
         }
     }
@@ -70,16 +80,7 @@ int main(){
         cout << "Erro na abertura do arquivo" << endl;
     }
 
-    cout << f.numero << endl;
-    cout << f.numero2 << endl;
-    cout << f.numero3 << endl;
-    cout << f.numero4 << endl;
-    cout << f.numero5 << endl;
-    cout << f.numero6 << endl;
-    cout << f.numero7 << endl;
-    cout << f.numero8 << endl;
-    cout << f.numero9 << endl;
-    cout << f.numero10 << endl;
+  
 }
 
 /*A ideia desse arquivo é fazer funcionar para depois aplicar no código principal, quando encontrar
