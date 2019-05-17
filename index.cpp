@@ -1,5 +1,6 @@
 #include <iostream>
-#include "funcoes.cpp"
+#include "cadastro.hpp"
+#include "animais.hpp"
 using namespace std;
 
 /* =============== WARNING ===========
@@ -33,13 +34,16 @@ int menu(){
 
 int main(){
     apresentacao();
-    
+   
+    selecao:
     int selecao;
     selecao = menu();            
        cout << selecao;
     switch (selecao){
         case 1: 
-           AlterarCadastro();
+           if(AlterarCadastro() == 0){
+              goto selecao;
+           }
         case 2:
            // removerAnimal();
         case 3:
