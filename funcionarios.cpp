@@ -1,5 +1,7 @@
 #include "funcionarios.hpp"
 
+//Construção da classe
+
 //Getters
 string Funcionario::getIdFuncionario(){
     return IdFuncionario;

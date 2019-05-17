@@ -5,7 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
-#include "funcionarios.h"
+#include "funcionarios.cpp"
 #include "animais.cpp"
 #include "cadastro.cpp"
 
@@ -14,5 +14,6 @@ int consultarDados(string idAnimal);
 int consultarDados(int i);
 int escreverArquivo(string idAnimal);
 int AlterarCadastro();
+
 
 #endif

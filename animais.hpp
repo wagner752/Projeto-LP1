@@ -43,4 +43,70 @@ class Animal{
 
 };
 
+//Sub-classe da classe de anfíbios
+class Anfibio : public Animal {
+    protected:
+        string TotalMudas; //int
+        string UltimaMuda;
+
+    public:
+    // ========WARNING=======
+    // TENTAR MUDAR PARA USAR CONSTRUTORES E DESTRUTORES
+    
+    /*
+    //Getters
+    string getTotalMudas();
+    string UltimaMuda();
+
+    //Setters
+    void setTotalMudas(string rTMudas);
+    void setUltimaMuda(string rUMudas);
+    
+   Anfibio(string rTotalMudas);
+};
+
+//Sub-classe dos anfíbios
+//Nativos
+class AnfibioNativo : public Anfibio{
+    protected:
+        string Nativo;
+    
+    public:
+    // ========WARNING=======
+    // TENTAR MUDAR PARA USAR CONSTRUTORES E DESTRUTORES
+
+    //Getters
+    string getNativo();
+    
+    //Setters
+    void setNativo(string rNativo);
+};
+
+//Exoticos
+class AnfibioExotico : public Anfibio{
+    protected:
+        string Exotico;
+    
+    public:
+    // ========WARNING=======
+    // TENTAR MUDAR PARA USAR CONSTRUTORES E DESTRUTORES
+
+    //Getters
+    string getExotico();
+
+    //Setters
+    string setExotico();
+};
+
+//Sub-classe da classe de mamiferos
+class Mamifero : public Animal{
+    protected:
+        string CorPelo;
+    
+    public: 
+    // ========WARNING=======
+    // TENTAR MUDAR PARA USAR CONSTRUTORES E DESTRUTORES
+
+};
+
 #endif

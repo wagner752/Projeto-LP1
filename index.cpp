@@ -1,6 +1,4 @@
-#include <iostream>
-#include "cadastro.hpp"
-#include "animais.hpp"
+#include "headerMain.hpp"
 using namespace std;
 
 /* =============== WARNING ===========
@@ -25,7 +23,7 @@ int menu(){
     cout << "Selecione oque deseja fazer:\n"
             "1- Cadastrar novo animal\n"
             "2- Remover animal cadastrado\n"
-            "3- Alterar dados cadastrais de um animal\n"
+            "3- Alterar dados cadastrados de um animal\n"
             "4- Consultar dados cadastrados\n"
             "5- Consultar animal de um veterinario/trador\n" << endl;
     cin >> selecao;
@@ -38,14 +36,15 @@ int main(){
     selecao:
     int selecao;
     selecao = menu();            
-       cout << selecao;
+   
     switch (selecao){
         case 1: 
            if(AlterarCadastro() == 0){
               goto selecao;
            }
+           //Se a função retornar 0, o programa volta para o menu
         case 2:
-           // removerAnimal();
+           //removerAnimal();
         case 3:
            // alterarCadastroAnimal();
         case 4:

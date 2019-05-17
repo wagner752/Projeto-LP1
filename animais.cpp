@@ -1,5 +1,7 @@
 #include "animais.hpp"
 
+//Construção da classe
+
 //Getters
 string Animal::getIdAnimal(){
     return IdAnimal;
@@ -125,3 +127,11 @@ vector<Animal> carregarAnimal(){
 
    return A;
 }
+
+//Contrução das subclasses
+
+Anfibio::Anfibio(string rTotalMudas){
+    TotalMudas = rTotalMudas;
+}
+
+Anfibio A("2");
