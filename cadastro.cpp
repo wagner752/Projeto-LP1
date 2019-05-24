@@ -1,4 +1,9 @@
-#include "cadastro.hpp"
+#include <vector>
+#include <string>
+#include <fstream>
+#include <sstream>
+#include "animais.cpp"
+
 
 using namespace std;
 
@@ -32,8 +37,7 @@ int consultarDados(string idAnimal){
    ifstream arquivoDadosCSV;
    arquivoDadosCSV.open("dadosAnimais.csv");
    string linha;
-   int i, j;
-
+   
    if (arquivoDadosCSV.is_open() == 0){
       cout << "Erro na abertura do arquivo ""dadosAnimais.csv"" o programa será encerrado" << endl;
       exit (EXIT_FAILURE);
@@ -79,6 +83,22 @@ int consultarDados(int i){
 
       //Exibição da lista de tratadores
       while(getline(arquivoTratadores, linha)){
+         cout << linha << endl;
+      }
+   }// /if
+
+   if (i == 2){
+      ifstream arquivoAnimais;
+      arquivoAnimais.open("listaAnimais.txt");
+      string linha;
+
+      if (arquivoAnimais.is_open() == 0){
+         cout << "Erro na abertura do arquivo ""ListaAnimais.txt"" o programa será encerrado" << endl;
+         exit (EXIT_FAILURE);
+      }
+
+      //Exibição da lista de animais
+      while(getline(arquivoAnimais, linha)){
          cout << linha << endl;
       }
    }// /if

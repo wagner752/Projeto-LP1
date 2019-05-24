@@ -1,4 +1,8 @@
 #include "funcionarios.hpp"
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 //Construção da classe
 

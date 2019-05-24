@@ -1,8 +1,6 @@
 #ifndef ANIMAIS_HPP
 #define ANIMAIS_HPP
 
-#include <string>
-
 class Animal{
     protected:
         string IdAnimal; //int
@@ -106,6 +104,7 @@ class Mamifero : public Animal{
     public: 
     // ========WARNING=======
     // TENTAR MUDAR PARA USAR CONSTRUTORES E DESTRUTORES
+    */
 
 };
 

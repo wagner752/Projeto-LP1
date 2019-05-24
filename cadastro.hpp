@@ -1,13 +1,11 @@
 #ifndef CADASTRO_HPP
 #define CADASTRO_HPP
 
-#include <string>
+
+#include <vector>
 #include <fstream>
 #include <sstream>
-#include <vector>
-#include "funcionarios.cpp"
 #include "animais.cpp"
-#include "cadastro.cpp"
 
 int consultarDados();
 int consultarDados(string idAnimal);

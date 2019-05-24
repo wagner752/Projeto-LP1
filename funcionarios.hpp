@@ -1,8 +1,6 @@
 #ifndef FUNCIONARIOS_HPP
 #define FUNCIONARIOS_HPP
 
-#include <string>
-
 class Funcionario{
     protected: 
         string IdFuncionario;
