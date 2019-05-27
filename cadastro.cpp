@@ -6,7 +6,8 @@
 #include <sstream>
 
 #include "headerMain.h"
-
+#include "animais.h"
+#include "funcionarios.h"
 
 using namespace std;
 
@@ -15,7 +16,7 @@ Header::Header(){
 }
 
 Header::~Header(){
-	Animal->clear();
+	animal->clear();
 }
 
 //Imprimir dados dos funcionarios na tela
@@ -54,10 +55,10 @@ int Header::consultarDados(string idAnimal){
       cout << "Erro na abertura do arquivo ""dadosAnimais.csv"" o programa será encerrado" << endl;
       exit (EXIT_FAILURE);
    }
-
+   
    map<string, string>::iterator it = animal->find(idAnimal);
 	cout << " Idenficador: " << it-> first << " - Animal: " << it-> second << endl;   
-
+   
 /*
    auto funcao = carregarAnimal();
    for( auto &A : funcao){ 

@@ -1,6 +1,4 @@
 #include "animais.h"
-#include <iostream>
-#include <string>
 
 using namespace std;
 

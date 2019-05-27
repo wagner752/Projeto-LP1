@@ -1,7 +1,11 @@
 #ifndef _ANIMAIS_H_
 #define _ANIMAIS_H_
 
-#include "headerMain.h"
+#include <string>
+#include <iostream>
+#include <map>
+
+using namespace std;
 
 class Animal{
     protected:

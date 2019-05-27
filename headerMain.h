@@ -8,14 +8,13 @@ using namespace std;
 #include <map>
 #include <string>
 #include "animais.h"
-//#include "funcionarios.h"
+#include "funcionarios.h"
 
 class Header{
     private:
         int totalAnimal = 0;
-    
     public:
-        map<string,Animal> animal;
+        map<string, Animal> *animal;
         int AlterarCadastro();
         int RemoverAnimal();
         int consultarDados();
@@ -24,11 +23,9 @@ class Header{
         int escreverArquivo(string idAnimal);
         void carregarAnimal();
 
-    
         //construtor
         Header();
-        ~Header();
-    
+        ~Header();    
 };
 
 #endif
