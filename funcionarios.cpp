@@ -1,6 +1,4 @@
-#include "funcionarios.hpp"
-#include <string>
-#include <iostream>
+#include "headerMain.h"
 
 using namespace std;
 
@@ -34,10 +32,12 @@ string Funcionario::getEspecialidade(){
 string Funcionario::getCodigoCrmv(){
     return CodigoCrmv;
 }
+/*
 //Getter Sub-classe Nivel de Segurança
 string Veterinario::getNivelSeguranca(){
     return NivelSeguranca;
 }
+*/
 
 //Setters
 void Funcionario::setIdFuncionario(string rID){ //int
@@ -67,19 +67,22 @@ void Funcionario::setEspecialidade(string rEspe){
 void Funcionario::setCodigoCrmv(string rCode){
     CodigoCrmv = rCode;
 }
+/*
 //Setter Sub-classe Nivel de Segurança
 void Veterinario::setNivelSeguranca(string rNivel){
     NivelSeguranca = rNivel;
 }
+*/
 
+/*
 //CONSTRUÇÃO DA CLASSE FUNCIONARIO
-vector<Funcionario> carregarFuncionarios(){ 
+map<Funcionario> carregarFuncionarios(){ 
    //Declaracao de variaveis
    ifstream arquivoDadosCSV;
    string linha;
    arquivoDadosCSV.open("dadosFuncionarios.csv");
-   vector<Funcionario>  F(11);
-   vector<Veterinario> V(10);
+   map<Funcionario>  F(11);
+   map<Veterinario> V(10);
    int j, i; //Indices
 
    //Teste se o arquivo foi aberto
@@ -132,4 +135,4 @@ vector<Funcionario> carregarFuncionarios(){
    arquivoDadosCSV.close(); //Fechamento do arquivo de dados de funcionarios
 
    return F;
-}
+}*/

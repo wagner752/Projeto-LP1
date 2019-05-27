@@ -1,6 +1,16 @@
-#include "animais.hpp"
+#include "animais.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 //Construção da classe
+Animal::Animal(string IdAnimal = "0", string ClasseAnimal = "", string NomeAnimal = "", string NomeCientifico = "", string SexoAnimal = "", string TamanhoAnimal = "", string DietaAnimal = "", string VeterinarioAssociado = "", string TratadorResponsavel = "", string NomeBatismo = ""){
+    //EMPTY  
+}
+Animal::~Animal(){
+    //EMPTY
+}
 
 //Getters
 string Animal::getIdAnimal(){
@@ -66,15 +76,49 @@ void Animal::setNomeBatismo(string rNomeBatismo){
     NomeBatismo = rNomeBatismo;
 }
 
+//Sobrecarga
+ostream& operator<< ( std::ostream& output, const Animal& animal){
+    output  << animal.IdAnimal << ";"
+            << animal.ClasseAnimal << ";"
+            << animal.NomeAnimal << ";"
+			<< animal.NomeCientifico << ";"
+			<< animal.SexoAnimal << ";"
+			<< animal.TamanhoAnimal << ";"
+            << animal.DietaAnimal << ";"
+            << animal.VeterinarioAssociado << ";"
+            << animal.TratadorResponsavel << ";"
+            << animal.NomeBatismo << endl;
+    
+    return output;
+}
+
+
+/*
+void carregarAnimal(){
+    ifstream arquivoDadosCSV;
+    string linha;
+    arquivoDadosCSV.open("dadosAnimais.csv");
+   
+    //Teste se o arquivo foi aberto
+    if (arquivoDadosCSV.is_open() == 0){
+        cout << "Erro na abertura do arquivo ""dadosAnimais.csv"" o programa será encerrado" << endl;
+        exit (EXIT_FAILURE);
+    }
+   
+    //Preenchimento da classe
+    
+
+    arquivoDadosCSV.close(); //Fechamento do arquivo dadosAnimais.csv
+}
 
 
 //CONSTRUIR CLASSE ANIMAL
-vector<Animal> carregarAnimal(){
+map<string, Animal> carregarAnimal(){
    ifstream arquivoDadosCSV;
    string linha;
    arquivoDadosCSV.open("dadosAnimais.csv");
    int i,j;
-   vector<Animal> A(11);
+   map<Animal> A(11);
 
     //Teste se o arquivo foi aberto
    if (arquivoDadosCSV.is_open() == 0){
@@ -126,12 +170,4 @@ vector<Animal> carregarAnimal(){
    arquivoDadosCSV.close(); //Fechamento do arquivo Animais.h
 
    return A;
-}
-
-//Contrução das subclasses
-
-Anfibio::Anfibio(string rTotalMudas){
-    TotalMudas = rTotalMudas;
-}
-
-Anfibio A("2");
+}*/

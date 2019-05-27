@@ -1,11 +1,22 @@
-#include <vector>
+#include <iostream>
+#include <map>
 #include <string>
 #include <fstream>
+#include <iterator>
 #include <sstream>
-#include "animais.cpp"
+
+#include "headerMain.h"
 
 
 using namespace std;
+
+Header::Header(){
+   totalAnimal = 0;
+}
+
+Header::~Header(){
+	Animal->clear();
+}
 
 //Imprimir dados dos funcionarios na tela
 int consultarDados(){
@@ -32,8 +43,9 @@ int consultarDados(){
    return 0;
 }
 
+
 //Verificar se o ID do animal já está cadastrado
-int consultarDados(string idAnimal){
+int Header::consultarDados(string idAnimal){
    ifstream arquivoDadosCSV;
    arquivoDadosCSV.open("dadosAnimais.csv");
    string linha;
@@ -43,13 +55,20 @@ int consultarDados(string idAnimal){
       exit (EXIT_FAILURE);
    }
 
+   map<string, string>::iterator it = animal->find(idAnimal);
+	cout << " Idenficador: " << it-> first << " - Animal: " << it-> second << endl;   
+
+/*
    auto funcao = carregarAnimal();
    for( auto &A : funcao){ 
         if (idAnimal == A.getIdAnimal()){
             return 1;
         }
     }
+*/
+
 }
+
 
 //Exibição de lista de veterinarios e de tratadores
 int consultarDados(int i){
@@ -199,7 +218,7 @@ int escreverArquivo(string idAnimal){
 }
 
 //Inicio do cadastro
-int AlterarCadastro(){
+int Header::AlterarCadastro(){
    cout << "\n===========================================================================" << endl;
    cout << "Alterar cadastro de animais no sistema" << endl;
    cout << "===========================================================================\n\n" << endl;
@@ -208,14 +227,11 @@ int AlterarCadastro(){
 
    cout << "Digite o ID do animal(Exemplo: 12)" << endl;
    cin >> idAnimal;
-   if (consultarDados(idAnimal) == 1){
-      cout << "\n===========================================================================" << endl;
-      cout << "ID inválido: ID já cadastrado no sistema" << endl;
-      cout << "===========================================================================\n\n" << endl;
-      
-      return 0;
-   }
+   
+   Header::consultarDados(idAnimal);
+   /*
    else {
       escreverArquivo(idAnimal);
    }
+   */
 }

@@ -1,10 +1,5 @@
-#include "headerMain.hpp"
-#include <iostream>
-#include <string>
-#include "cadastro.cpp"
-#include "funcionarios.cpp"
-#include "animais.cpp"
-#include "remocao.cpp"
+#include "headerMain.h"
+#include "headerIndex.h"
 
 using namespace std;
 
@@ -36,19 +31,21 @@ int menu(){
 int main(){
    apresentacao();
    
+   Header CARAIO;
+   
    selecao:
    int selecao;
    selecao = menu();            
    
    switch (selecao){
       case 1: 
-         if(AlterarCadastro() == 0){
+         if(CARAIO.AlterarCadastro() == 0){
             goto selecao;
          }
       case 2:
-         if(RemoverAnimal() == 0){
-            goto selecao;
-         }
+         //if(RemoverAnimal() == 0){
+         //   goto selecao;
+         //}
       case 3:
          // alterarCadastroAnimal();
       case 4:
@@ -59,5 +56,6 @@ int main(){
    }
 
    //Se a função retornar 0, o programa volta para o menu
+   
    return 0;
 }
