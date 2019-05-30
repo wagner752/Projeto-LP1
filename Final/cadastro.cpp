@@ -16,11 +16,11 @@ int cadastrarAnimal(){
  
    auxiliar = carregarDados(selecao, escolha = 1);
    if(auxiliar == 0){
-      goto recarregar;
+      return 0;
    }
    //SAIR DA FUNÇÃO
    if (auxiliar == 1){
-      return 0;
+      goto recarregar;
    }
    if(auxiliar == 2){
       //CADASTRAR ANIMAL
